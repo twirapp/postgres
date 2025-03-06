@@ -23,10 +23,11 @@ work_mem = 786kB
 huge_pages = off
 min_wal_size = 1GB
 max_wal_size = 4GB
+shared_preload_libraries = 'pgx_ulid'
 ```
 
 Cli representation of configuration:
 
 ```bash
-postgres -c max_connections=1000 -c shared_buffers=1536MB -c effective_cache_size=4608MB -c maintenance_work_mem=384MB -c checkpoint_completion_target=0.9 -c wal_buffers=16MB -c default_statistics_target=100 -c random_page_cost=1.1 -c effective_io_concurrency=200 -c work_mem=786kB -c huge_pages=off -c min_wal_size=1GB -c max_wal_size=4GB
+postgres -c max_connections=1000 -c shared_buffers=1536MB -c effective_cache_size=4608MB -c maintenance_work_mem=384MB -c checkpoint_completion_target=0.9 -c wal_buffers=16MB -c default_statistics_target=100 -c random_page_cost=1.1 -c effective_io_concurrency=200 -c work_mem=786kB -c huge_pages=off -c min_wal_size=1GB -c max_wal_size=4GB shared_preload_libraries = 'pgx_ulid'
 ```
